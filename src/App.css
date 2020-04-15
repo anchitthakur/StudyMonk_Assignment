@@ -1,38 +1,174 @@
-.App {
+html {
+    --lh: 1.5rem;
+    line-height: var(--lh);
+}
+
+.image {
+    border-radius: 25px;
+    width: 100%;
+    height: auto;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+.img1-wrap {
+    position: relative;
+}
+
+.overlay {
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /*opacity: 50%;*/
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.img1-wrap:hover .overlay {
+    border-radius: 25px;
+    height: 100%;
+}
+
+.text {
+    text-align: center;
+    white-space: normal;
+    color: white;
+    height: 100%;
+    max-height: 20px;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: 20px;
+}
+
+.button-like {
+    border: 2px solid #8a8a8a;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3rem;
+    color: #8a8a8a;
+    transition: all ease 0.4s;
+}
+
+.button-like span {
+    transition: all ease 0.4s;
+}
+
+.button-like:hover {
+    border-color: #cc4b37;
+    background-color: transparent;
+}
+
+.button-like:hover span {
+    color: #cc4b37;
+}
+
+.liked {
+    background-color: #cc4b37;
+    border-color: #cc4b37;
+}
+
+.liked .fa,
+.liked span {
+    color: #fefefe;
+}
+
+.liked:focus {
+    outline: 0 !important;
+    background-color: #cc4b37;
+}
+
+.liked:focus .fa,
+.liked:focus span {
+    color: #fefefe;
+}
+
+.liked:hover {
+    background-color: #cc4b37;
+    border-color: #cc4b37;
+}
+
+.liked:hover .fa,
+.liked:hover span {
+    color: #ffffff;
+}
+
+.button-more {
+  border: 2px solid #8a8a8a;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  vertical-align: middle;
   text-align: center;
+  display: inline-block;
+  border-radius: 3rem;
+  color: #8a8a8a;
+  transition: all ease 0.4s;
+}
+.button-more span {
+  transition: all ease 0.4s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button-more:hover {
+  border-color: green;
+  background-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-more:hover span {
+  color: green;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.loader {
+    border-radius: 50%;
+    border: 16px solid blue;
+    border-right-color: green;
+    border-bottom-color: red;
+    border-left-color: pink;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.truncate-overflow-5 {
+    --max-lines: 5;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    margin-right: 0;
+    padding-right: 1em;
+}
+
+.truncate-overflow-5::after {
+    color: white;
+    position: absolute;
+    content: "...";
+    bottom: 0;
+    right: 0;
 }
