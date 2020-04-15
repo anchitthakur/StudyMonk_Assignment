@@ -6,7 +6,6 @@ import Overlay from "./Overlay";
 const Movie = ({movie, isMobile}) => {
 
     const [loading, setLoading] = React.useState(true);
-    const [liked, setLiked] = React.useState(false);
     const [modalShow, setModalShow] = React.useState(false);
 
     function MyVerticallyCenteredModal(props) {
@@ -24,6 +23,8 @@ const Movie = ({movie, isMobile}) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                    <img style={{width:"100%"}} src={"https://image.tmdb.org/t/p/original/" + movie.backdrop_path} />
+                    <br />
                     <h4>Description</h4>
                     <p>
                         {movie.overview}
