@@ -36,7 +36,7 @@ const MovieComponent = ({currPage}) => {
     return (
         <InfiniteScroll
             className={"row"}
-            style={{margin: 0}}
+            style={{margin: 0, overflow:"hidden"}}
             dataLength={data.length}
             next={() => fetchData((data.length / 20) + 1)}
             hasMore={true}

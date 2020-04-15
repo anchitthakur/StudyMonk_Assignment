@@ -47,15 +47,15 @@ const Movie = ({movie, isMobile}) => {
 
     return (<>
         <Col lg={2} md={3} sm={4} xs={6} style={{margin: "10px 0 0 0"}}>
+            <div style={{display: loading ? "block" : "none"}}>
+                <div className="loader"/>
+            </div>
             <div className="img1-wrap">
                 <div style={{display: loading ? "none" : "block"}}>
                     <img className="image" src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}
                          onLoad={() => setLoading(false)}
                          onClick={() => setModalShow(true)}
                          alt={"poster"}/>
-                </div>
-                <div style={{display: loading ? "block" : "none"}}>
-                    <div className="loader"/>
                 </div>
                 <MyVerticallyCenteredModal
                     show={modalShow}
@@ -66,10 +66,6 @@ const Movie = ({movie, isMobile}) => {
                 }
             </div>
         </Col>
-        <MyVerticallyCenteredModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-        />
     </>);
 };
 

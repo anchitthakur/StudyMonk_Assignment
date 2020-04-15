@@ -3,7 +3,7 @@ import {Nav, Navbar} from "react-bootstrap";
 
 const NavBar = ({setCurrPage}) => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky={"top"}>
+        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky={"top"}>
             <Navbar.Brand href="#home">Movie Catalogue</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
